@@ -342,18 +342,18 @@ export default function Contact() {
     {
       icon: FiPhone,
       title: "Phone",
-      details: ["+1 (555) 123-4567", "+1 (555) 987-6543"],
+      details: ["+92 (307) 930-4184", "+92 (328) 942-3123"],
     },
     {
       icon: FiMapPin,
       title: "Location",
-      details: ["San Francisco, CA", "United States"],
+      details: ["Johar Town, Lahore", "Pakistan."],
     },
     {
       icon: FiClock,
       title: "Working Hours",
       details: [
-        "Monday - Friday: 9AM - 6PM PST",
+        "Monday - Friday: 9AM - 6PM PKT",
         "Saturday - Sunday: Available for urgent inquiries",
       ],
     },
