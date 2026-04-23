@@ -29,6 +29,7 @@ import {
   SiTelegram,
   SiDiscord,
   SiSlack,
+  SiTiktok,
 } from "react-icons/si";
 
 // Animation variants
@@ -61,10 +62,23 @@ const scaleOnHover = {
 };
 
 // Form Input Component
-const FormInput = ({ label, name, type = "text", value, onChange, error, required, icon: Icon, placeholder }) => {
+const FormInput = ({
+  label,
+  name,
+  type = "text",
+  value,
+  onChange,
+  error,
+  required,
+  icon: Icon,
+  placeholder,
+}) => {
   return (
     <div className="mb-5">
-      <label htmlFor={name} className="block text-sm font-medium text-text mb-2">
+      <label
+        htmlFor={name}
+        className="block text-sm font-medium text-text mb-2"
+      >
         {label} {required && <span className="text-primary">*</span>}
       </label>
       <div className="relative">
@@ -99,10 +113,23 @@ const FormInput = ({ label, name, type = "text", value, onChange, error, require
 };
 
 // Textarea Component
-const FormTextarea = ({ label, name, value, onChange, error, required, icon: Icon, placeholder, rows = 5 }) => {
+const FormTextarea = ({
+  label,
+  name,
+  value,
+  onChange,
+  error,
+  required,
+  icon: Icon,
+  placeholder,
+  rows = 5,
+}) => {
   return (
     <div className="mb-5">
-      <label htmlFor={name} className="block text-sm font-medium text-text mb-2">
+      <label
+        htmlFor={name}
+        className="block text-sm font-medium text-text mb-2"
+      >
         {label} {required && <span className="text-primary">*</span>}
       </label>
       <div className="relative">
@@ -182,10 +209,24 @@ const SocialButton = ({ href, icon: Icon, label, color }) => {
       whileTap={{ scale: 0.95 }}
       className="flex items-center gap-3 px-4 py-3 bg-white rounded-xl border border-primary/10 shadow-sm hover:shadow-md transition-all group"
     >
-      <div className={`p-2 rounded-lg bg-${color}/10 group-hover:bg-${color}/20 transition-colors`}>
-        <Icon className={`w-5 h-5 text-${color}`} style={{ color: color === "primary" ? "#059669" : color === "blue" ? "#3B82F6" : "#1DA1F2" }} />
+      <div
+        className={`p-2 rounded-lg bg-${color}/10 group-hover:bg-${color}/20 transition-colors`}
+      >
+        <Icon
+          className={`w-5 h-5 text-${color}`}
+          style={{
+            color:
+              color === "primary"
+                ? "#059669"
+                : color === "blue"
+                  ? "#3B82F6"
+                  : "#1DA1F2",
+          }}
+        />
       </div>
-      <span className="font-medium text-text group-hover:text-primary transition-colors">{label}</span>
+      <span className="font-medium text-text group-hover:text-primary transition-colors">
+        {label}
+      </span>
     </motion.a>
   );
 };
@@ -198,7 +239,9 @@ const AvailabilityBadge = () => {
         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
         <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
       </span>
-      <span className="text-xs font-medium text-green-700">Available for work</span>
+      <span className="text-xs font-medium text-green-700">
+        Available for work
+      </span>
     </div>
   );
 };
@@ -274,11 +317,11 @@ export default function Contact() {
     // Simulate API call (replace with actual API endpoint)
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500));
-      
+
       // Success
       setSubmitStatus("success");
       setFormData({ name: "", email: "", subject: "", message: "" });
-      
+
       // Reset success message after 5 seconds
       setTimeout(() => setSubmitStatus(null), 5000);
     } catch (error) {
@@ -294,38 +337,60 @@ export default function Contact() {
     {
       icon: FiMail,
       title: "Email",
-      details: ["hello@example.com", "support@example.com"],
-      link: "mailto:hello@example.com",
-      linkText: "Send email",
+      details: ["zainsultani333@gmail,com", "zainsultan2312@gmail.com"],
     },
     {
       icon: FiPhone,
       title: "Phone",
       details: ["+1 (555) 123-4567", "+1 (555) 987-6543"],
-      link: "tel:+15551234567",
-      linkText: "Call now",
     },
     {
       icon: FiMapPin,
       title: "Location",
       details: ["San Francisco, CA", "United States"],
-      link: "https://maps.google.com",
-      linkText: "Get directions",
     },
     {
       icon: FiClock,
       title: "Working Hours",
-      details: ["Monday - Friday: 9AM - 6PM PST", "Saturday - Sunday: Available for urgent inquiries"],
+      details: [
+        "Monday - Friday: 9AM - 6PM PST",
+        "Saturday - Sunday: Available for urgent inquiries",
+      ],
     },
   ];
 
   // Social links
   const socialLinks = [
-    { href: "https://github.com", icon: FiGithub, label: "GitHub", color: "primary" },
-    { href: "https://linkedin.com", icon: FiLinkedin, label: "LinkedIn", color: "blue" },
-    { href: "https://twitter.com", icon: FiTwitter, label: "Twitter", color: "blue" },
-    { href: "https://instagram.com", icon: FiInstagram, label: "Instagram", color: "primary" },
-    { href: "https://youtube.com", icon: FiYoutube, label: "YouTube", color: "primary" },
+    {
+      href: "https://github.com/zainsultani333-glitch?",
+      icon: FiGithub,
+      label: "GitHub",
+      color: "primary",
+    },
+    {
+      href: "https://www.linkedin.com/in/m-zain-75675a2a0/",
+      icon: FiLinkedin,
+      label: "LinkedIn",
+      color: "blue",
+    },
+    {
+      href: "https://x.com/MZain1038353",
+      icon: FiTwitter,
+      label: "Twitter",
+      color: "blue",
+    },
+    {
+      href: "https://www.instagram.com/mzain4855?utm_source=qr&igsh=bndqM3hoOTdzaHVw",
+      icon: FiInstagram,
+      label: "Instagram",
+      color: "primary",
+    },
+    {
+      href: "https://www.tiktok.com/@muhammadzain7711?_r=1&_t=ZS-95miXUffd6f",
+      icon: SiTiktok,
+      label: "YouTube",
+      color: "primary",
+    },
   ];
 
   // Quick response options
@@ -391,8 +456,8 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Have a project in mind or just want to say hello? I'd love to hear from you.
-            Let's create something amazing together.
+            Have a project in mind or just want to say hello? I'd love to hear
+            from you. Let's create something amazing together.
           </motion.p>
         </div>
       </section>
@@ -414,7 +479,9 @@ export default function Contact() {
 
             {/* Contact Info Cards */}
             <motion.div variants={fadeInUp}>
-              <h2 className="text-2xl font-bold text-text mb-5">Contact Information</h2>
+              <h2 className="text-2xl font-bold text-text mb-5">
+                Contact Information
+              </h2>
               <div className="space-y-4">
                 {contactInfo.map((info, idx) => (
                   <ContactInfoCard key={idx} {...info} />
@@ -424,7 +491,9 @@ export default function Contact() {
 
             {/* Social Links */}
             <motion.div variants={fadeInUp}>
-              <h2 className="text-2xl font-bold text-text mb-5">Connect With Me</h2>
+              <h2 className="text-2xl font-bold text-text mb-5">
+                Connect With Me
+              </h2>
               <div className="grid sm:grid-cols-2 gap-3">
                 {socialLinks.map((social, idx) => (
                   <SocialButton key={idx} {...social} />
@@ -434,7 +503,9 @@ export default function Contact() {
 
             {/* Quick Response Options */}
             <motion.div variants={fadeInUp}>
-              <h2 className="text-2xl font-bold text-text mb-5">Quick Inquiries</h2>
+              <h2 className="text-2xl font-bold text-text mb-5">
+                Quick Inquiries
+              </h2>
               <div className="flex flex-wrap gap-2">
                 {quickResponses.map((response) => (
                   <motion.button
@@ -460,8 +531,8 @@ export default function Contact() {
                 <span className="font-semibold text-text">Response Time</span>
               </div>
               <p className="text-text/60 text-sm">
-                I typically respond within 24 hours during business days. 
-                For urgent matters, please mention "URGENT" in your subject line.
+                I typically respond within 24 hours during business days. For
+                urgent matters, please mention "URGENT" in your subject line.
               </p>
             </motion.div>
           </motion.div>
@@ -472,12 +543,16 @@ export default function Contact() {
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           >
-            <motion.div variants={fadeInRight} className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-primary/10">
+            <motion.div
+              variants={fadeInRight}
+              className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-primary/10"
+            >
               <div className="text-center mb-6">
                 <h2 className="text-2xl font-bold text-text">Send a Message</h2>
                 <div className="w-20 h-1 bg-primary mx-auto mt-3 rounded-full" />
                 <p className="text-text/60 mt-3 text-sm">
-                  Fill out the form below and I'll get back to you as soon as possible
+                  Fill out the form below and I'll get back to you as soon as
+                  possible
                 </p>
               </div>
 
@@ -490,8 +565,12 @@ export default function Contact() {
                 >
                   <FiCheckCircle className="w-5 h-5 text-green-500" />
                   <div>
-                    <p className="font-medium text-green-700">Message Sent Successfully!</p>
-                    <p className="text-sm text-green-600">I'll get back to you shortly.</p>
+                    <p className="font-medium text-green-700">
+                      Message Sent Successfully!
+                    </p>
+                    <p className="text-sm text-green-600">
+                      I'll get back to you shortly.
+                    </p>
                   </div>
                 </motion.div>
               )}
@@ -505,13 +584,17 @@ export default function Contact() {
                 >
                   <FiAlertCircle className="w-5 h-5 text-red-500" />
                   <div>
-                    <p className="font-medium text-red-700">Something went wrong!</p>
-                    <p className="text-sm text-red-600">Please try again or email me directly.</p>
+                    <p className="font-medium text-red-700">
+                      Something went wrong!
+                    </p>
+                    <p className="text-sm text-red-600">
+                      Please try again or email me directly.
+                    </p>
                   </div>
                 </motion.div>
               )}
 
-              <form onSubmit={handleSubmit}>
+              <form className="text-black" onSubmit={handleSubmit}>
                 <FormInput
                   label="Your Name"
                   name="name"
@@ -591,7 +674,7 @@ export default function Contact() {
                     href="mailto:hello@example.com"
                     className="text-primary font-medium hover:underline"
                   >
-                    hello@example.com
+                    zainsultani333@gmail.com
                   </a>
                 </p>
               </div>
@@ -608,7 +691,7 @@ export default function Contact() {
         >
           <div className="rounded-2xl overflow-hidden shadow-lg border border-primary/10">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100939.98555016464!2d-122.507640!3d37.757815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+              src="https://www.google.com/maps?q=Block+K+Johar+Town+Lahore+Pakistan&output=embed"
               width="100%"
               height="300"
               style={{ border: 0 }}
@@ -629,16 +712,30 @@ export default function Contact() {
           className="mt-16 text-center"
         >
           <motion.div variants={fadeInUp}>
-            <h2 className="text-2xl font-bold text-text mb-4">Frequently Asked Questions</h2>
+            <h2 className="text-2xl font-bold text-text mb-4">
+              Frequently Asked Questions
+            </h2>
             <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-8" />
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6 text-left">
             {[
-              { q: "What is your typical response time?", a: "I usually respond within 24 hours during business days (Monday-Friday)." },
-              { q: "Do you take on freelance projects?", a: "Yes! I'm currently available for freelance work. Let's discuss your project needs." },
-              { q: "What is your preferred way of communication?", a: "Email is best for initial contact. For ongoing projects, we can use Slack, Discord, or video calls." },
-              { q: "Do you offer ongoing support?", a: "Absolutely! I provide maintenance and support packages for long-term collaborations." },
+              {
+                q: "What is your typical response time?",
+                a: "I usually respond within 24 hours during business days (Monday-Friday).",
+              },
+              {
+                q: "Do you take on freelance projects?",
+                a: "Yes! I'm currently available for freelance work. Let's discuss your project needs.",
+              },
+              {
+                q: "What is your preferred way of communication?",
+                a: "Email is best for initial contact. For ongoing projects, we can use Slack, Discord, or video calls.",
+              },
+              {
+                q: "Do you offer ongoing support?",
+                a: "Absolutely! I provide maintenance and support packages for long-term collaborations.",
+              },
             ].map((faq, idx) => (
               <motion.div
                 key={idx}
@@ -661,9 +758,21 @@ export default function Contact() {
         transition={{ duration: 0.5, delay: 1 }}
       >
         {[
-          { href: "https://github.com/zainsultani333-glitch?", icon: FiGithub, label: "GitHub" },
-          { href: "https://www.linkedin.com/in/m-zain-75675a2a0/", icon: FiLinkedin, label: "LinkedIn" },
-          { href: "https://x.com/MZain1038353", icon: FiTwitter, label: "Twitter" },
+          {
+            href: "https://github.com/zainsultani333-glitch?",
+            icon: FiGithub,
+            label: "GitHub",
+          },
+          {
+            href: "https://www.linkedin.com/in/m-zain-75675a2a0/",
+            icon: FiLinkedin,
+            label: "LinkedIn",
+          },
+          {
+            href: "https://x.com/MZain1038353",
+            icon: FiTwitter,
+            label: "Twitter",
+          },
         ].map((social, index) => (
           <motion.a
             key={index}
