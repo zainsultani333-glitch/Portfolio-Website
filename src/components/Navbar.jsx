@@ -41,9 +41,6 @@ export default function Navbar() {
               className="text-2xl font-bold transition-all duration-300 hover:scale-105 text-primary"
             >
               MyPortfolio
-              <span className="text-sm ml-1 text-secondary">
-                ✦
-              </span>
             </Link>
 
             {/* Desktop Navigation */}

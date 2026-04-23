@@ -26,6 +26,8 @@ import {
   FiBox,
   FiStar,
   FiCheckCircle,
+  FiSettings,
+  FiFramer,
 } from "react-icons/fi";
 import {
   SiReact,
@@ -53,6 +55,8 @@ import {
   SiRedis,
   SiNginx,
   SiLinux,
+  SiJavascript,
+  SiAuth0,
 } from "react-icons/si";
 
 // Animation variants
@@ -223,12 +227,12 @@ export default function Skills() {
       skills: [
         { name: "React", icon: SiReact, color: "#61DAFB", level: 92, description: "Hooks, Context, Custom hooks, Performance optimization" },
         { name: "Next.js", icon: SiNextdotjs, color: "#000000", level: 90, description: "App Router, SSR, ISR, API routes" },
-        { name: "TypeScript", icon: SiTypescript, color: "#3178C6", level: 88, description: "Advanced types, Generics, Type safety" },
+        // { name: "TypeScript", icon: SiTypescript, color: "#3178C6", level: 88, description: "Advanced types, Generics, Type safety" },
         { name: "TailwindCSS", icon: SiTailwindcss, color: "#06B6D4", level: 95, description: "Utility-first, Custom configurations" },
         { name: "Redux", icon: SiRedux, color: "#764ABC", level: 85, description: "State management, Redux Toolkit" },
-        { name: "Framer Motion", level: 84, description: "Animations, Gestures, Variants" },
-        { name: "HTML5/CSS3", level: 92, description: "Semantic markup, Flexbox, Grid, Animations" },
-        { name: "JavaScript (ES6+)", level: 90, description: "Async patterns, Closures, Prototypes" },
+        { name: "Framer Motion", icon: FiFramer, color: "#DC382D", level: 84, description: "Animations, Gestures, Variants" },
+        { name: "HTML5/CSS3", icon: FiLayout, color: "#FFCA28", level: 92, description: "Semantic markup, Flexbox, Grid, Animations" },
+        { name: "JavaScript (ES6+)", icon: FiCode, level: 90, description: "Async patterns, Closures, Prototypes" },
       ],
     },
     {
@@ -238,25 +242,28 @@ export default function Skills() {
       color: "bg-soft/50",
       skills: [
         { name: "Node.js", icon: SiNodedotjs, color: "#339933", level: 85, description: "Express, REST APIs, Microservices" },
-        { name: "Python", icon: SiPython, color: "#3776AB", level: 75, description: "Django, Flask, Scripting" },
-        { name: "GraphQL", icon: SiGraphql, color: "#E10098", level: 80, description: "Apollo, Schema design, Resolvers" },
+        // { name: "Python", icon: SiPython, color: "#3776AB", level: 75, description: "Django, Flask, Scripting" },
+        // { name: "GraphQL", icon: SiGraphql, color: "#E10098", level: 80, description: "Apollo, Schema design, Resolvers" },
         { name: "Express.js", icon: SiExpress, color: "#000000", level: 85, description: "Middleware, Routing, Error handling" },
-        { name: "REST API Design", level: 88, description: "OpenAPI, Versioning, Authentication" },
-        { name: "WebSockets", level: 78, description: "Socket.io, Real-time communication" },
+        { name: "REST API Design", icon: FiServer, level: 88, description: "OpenAPI, Versioning, Authentication" },
+        // { name: "WebSockets", level: 78, description: "Socket.io, Real-time communication" },
+        { name: "Authentication & Authorization", icon: SiAuth0, color: "#4169E1", level: 90, description: "JWT, OAuth, Role-based access control" },
+        { name: "Environment & Config", icon: FiSettings, color: "#FFCA28", level: 85, description: "dotenv, Config management" },
+        { name: "Deployment", icon: SiDocker, color: "#DC382D", level: 80, description: "Vercel, Render, Docker basics" },
       ],
     },
     {
       id: "database",
-      name: "Database & ORM",
+      name: "Database",
       icon: FiDatabase,
       color: "bg-soft/50",
       skills: [
-        { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1", level: 82, description: "Complex queries, Indexing, Optimization" },
+        // { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1", level: 82, description: "Complex queries, Indexing, Optimization" },
         { name: "MongoDB", icon: SiMongodb, color: "#47A248", level: 85, description: "Aggregation, Indexes, Replication" },
-        { name: "MySQL", icon: SiMysql, color: "#4479A1", level: 80, description: "Joins, Stored procedures" },
-        { name: "Prisma", icon: SiPrisma, color: "#2D3748", level: 84, description: "Schema modeling, Migrations" },
-        { name: "Redis", icon: SiRedis, color: "#DC382D", level: 70, description: "Caching, Session management" },
-        { name: "Firebase", icon: SiFirebase, color: "#FFCA28", level: 78, description: "Firestore, Auth, Storage" },
+        // { name: "MySQL", icon: SiMysql, color: "#4479A1", level: 80, description: "Joins, Stored procedures" },
+        // { name: "Prisma", icon: SiPrisma, color: "#2D3748", level: 84, description: "Schema modeling, Migrations" },
+        // { name: "Redis", icon: SiRedis, color: "#DC382D", level: 70, description: "Caching, Session management" },
+        // { name: "Firebase", icon: SiFirebase, color: "#FFCA28", level: 78, description: "Firestore, Auth, Storage" },
       ],
     },
     {
@@ -267,12 +274,12 @@ export default function Skills() {
       skills: [
         { name: "Git", icon: SiGit, color: "#F05032", level: 90, description: "Branching strategies, CI/CD workflows" },
         { name: "Docker", icon: SiDocker, color: "#2496ED", level: 75, description: "Containerization, Docker Compose" },
-        { name: "Jest", icon: SiJest, color: "#C21325", level: 82, description: "Unit testing, Integration tests" },
+        // { name: "Jest", icon: SiJest, color: "#C21325", level: 82, description: "Unit testing, Integration tests" },
         { name: "Vercel", icon: SiVercel, color: "#000000", level: 88, description: "Deployment, Preview deployments" },
-        { name: "Webpack", icon: SiWebpack, color: "#8DD6F9", level: 80, description: "Bundling, Code splitting" },
-        { name: "Storybook", icon: SiStorybook, color: "#FF4785", level: 78, description: "Component library, Documentation" },
-        { name: "Linux", icon: SiLinux, color: "#FCC624", level: 70, description: "Command line, Server management" },
-        { name: "Nginx", icon: SiNginx, color: "#009639", level: 65, description: "Reverse proxy, Load balancing" },
+        // { name: "Webpack", icon: SiWebpack, color: "#8DD6F9", level: 80, description: "Bundling, Code splitting" },
+        // { name: "Storybook", icon: SiStorybook, color: "#FF4785", level: 78, description: "Component library, Documentation" },
+        // { name: "Linux", icon: SiLinux, color: "#FCC624", level: 70, description: "Command line, Server management" },
+        // { name: "Nginx", icon: SiNginx, color: "#009639", level: 65, description: "Reverse proxy, Load balancing" },
       ],
     },
   ];
@@ -280,7 +287,7 @@ export default function Skills() {
   // Top mastered skills (for detailed bars)
   const masteredSkills = [
     { name: "React Ecosystem", level: 92, icon: SiReact, color: "bg-gradient-to-r from-primary to-secondary", description: "Hooks, Context, Performance optimization" },
-    { name: "TypeScript", level: 88, icon: SiTypescript, description: "Advanced type system, Generic patterns" },
+    { name: "JavaScript", level: 88, icon: SiJavascript, description: "ES6+, DOM manipulation, async/await" },
     { name: "Next.js", level: 90, icon: SiNextdotjs, description: "App Router, SSR, ISR, Middleware" },
     { name: "TailwindCSS", level: 95, icon: SiTailwindcss, description: "Custom configurations, Responsive design" },
     { name: "Node.js", level: 85, icon: SiNodedotjs, description: "REST APIs, Authentication, Microservices" },
@@ -289,11 +296,11 @@ export default function Skills() {
 
   // Certifications
   const certifications = [
-    { name: "Meta Frontend Developer Professional Certificate", issuer: "Meta / Coursera", year: "2024" },
-    { name: "AWS Cloud Practitioner", issuer: "Amazon Web Services", year: "2023" },
-    { name: "Google UX Design Certificate", issuer: "Google / Coursera", year: "2023" },
-    { name: "JavaScript Algorithms and Data Structures", issuer: "freeCodeCamp", year: "2022" },
-    { name: "Advanced React and GraphQL", issuer: "Frontend Masters", year: "2023" },
+    { name: "Graphic Design Certification", issuer: "Design Solution Academy", year: "2023" },
+    { name: "UI/UX Design Certification", issuer: "Design Solution Academy", year: "2023" },
+    // { name: "Google UX Design Certificate", issuer: "Google / Coursera", year: "2023" },
+    // { name: "JavaScript Algorithms and Data Structures", issuer: "freeCodeCamp", year: "2022" },
+    // { name: "Advanced React and GraphQL", issuer: "Frontend Masters", year: "2023" },
   ];
 
   // Soft skills
@@ -383,10 +390,10 @@ export default function Skills() {
           className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
         >
           {[
-            { value: "30+", label: "Technologies", icon: FiCode },
-            { value: "5+", label: "Years Experience", icon: FiTrendingUp },
-            { value: "50+", label: "Projects Built", icon: FiBox },
-            { value: "10+", label: "Certifications", icon: FiAward },
+            { value: "15+", label: "Technologies", icon: FiCode },
+            { value: "1+", label: "Years Experience", icon: FiTrendingUp },
+            { value: "10+", label: "Projects Built", icon: FiBox },
+            { value: "5+", label: "Certifications", icon: FiAward },
           ].map((stat, idx) => (
             <motion.div
               key={stat.label}
@@ -445,11 +452,10 @@ export default function Skills() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-5 py-2.5 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 ${
-                  activeTab === tab.id
+                className={`px-5 py-2.5 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 ${activeTab === tab.id
                     ? "bg-primary text-white shadow-md shadow-primary/20"
                     : "bg-white text-text/60 border border-primary/20 hover:border-primary/40 hover:text-primary"
-                }`}
+                  }`}
               >
                 <tab.icon className="w-4 h-4" />
                 {tab.label}
@@ -545,10 +551,10 @@ export default function Skills() {
           <h3 className="text-2xl font-bold text-text mb-3">Continuous Learning</h3>
           <p className="text-text/60 max-w-2xl mx-auto mb-6">
             I'm committed to staying at the forefront of web development. Currently exploring
-            WebAssembly, AI integration, and advanced backend architectures.
+            Dev Ops, AI integration, and advanced backend architectures.
           </p>
           <div className="flex flex-wrap justify-center gap-2">
-            {["WebAssembly", "Machine Learning", "Kubernetes", "Rust"].map((topic) => (
+            {["AWS Cloud", "AI Tools", "MySQL", "Prisma"].map((topic) => (
               <span
                 key={topic}
                 className="px-3 py-1.5 text-sm bg-white rounded-lg text-primary border border-primary/20"
