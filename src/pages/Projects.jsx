@@ -319,8 +319,8 @@ export default function Projects() {
       featured: true,
       year: "2024",
       likes: 128,
-      liveLink: "#",
-      githubLink: "#",
+      liveLink: "https://e-commerce-store-iota-ten.vercel.app/",
+      githubLink: "https://github.com/zainsultani333-glitch/E-Commerce-Store",
       features: [
         "User authentication & authorization",
         "Product search & filtering",
@@ -342,8 +342,8 @@ export default function Projects() {
       featured: true,
       year: "2024",
       likes: 89,
-      liveLink: "#",
-      githubLink: "#",
+       liveLink: "https://new-modern-dashboard-design.vercel.app/dashboard",
+      githubLink: "https://github.com/zainsultani333-glitch/New-Modern-Dashboard-Design",
       features: [
         "Real-time data streaming",
         "Interactive charts & graphs",
@@ -353,26 +353,26 @@ export default function Projects() {
         "Responsive design"
       ]
     },
-    {
+     {
       id: 3,
-      title: "Mobile App UI",
-      description: "Cross-platform mobile application design with smooth animations and intuitive navigation.",
-      fullDescription: "A beautifully designed mobile app UI for a fitness tracking application. Features include activity tracking, workout plans, nutrition logging, and social sharing. Built with React Native and Expo, with smooth animations using Reanimated.",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop",
-      tags: ["React Native", "Figma", "Firebase", "Expo", "Reanimated"],
-      category: "mobile",
-      featured: false,
-      year: "2023",
-      likes: 67,
-      liveLink: "#",
-      githubLink: "#",
+      title: "Job Post System Dashboard",
+      description: "A full-stack job portal dashboard for posting, managing, and applying to jobs with admin control.",
+      fullDescription: "A modern job post system dashboard where users can post jobs, browse listings, and apply seamlessly. It includes authentication, role-based access (admin, recruiter, candidate), job filtering, and application tracking. Built for efficiency and scalability with a clean UI and smooth UX.",
+      image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&h=400&fit=crop",
+      tags: ["React", "Node.js", "Express", "MongoDB", "Tailwind", "JWT"],
+      category: "fullstack",
+      featured: true,
+      year: "2024",
+      likes: 95,
+      liveLink: "https://frontend-job-system.vercel.app/",
+      githubLink: "https://github.com/zainsultani333-glitch/Frontend-Job-System",
       features: [
-        "Onboarding screens",
-        "Activity tracking dashboard",
-        "Workout plan creator",
-        "Nutrition logger",
-        "Social feed",
-        "Push notifications"
+        "Job posting & management system",
+        "Role-based authentication (Admin, Recruiter, User)",
+        "Job search & filtering",
+        "Application tracking system",
+        "Dashboard analytics",
+        "Responsive UI"
       ]
     },
     {
