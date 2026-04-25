@@ -16,7 +16,7 @@ export const subscribeUser = (data) => {
 // 📬 Send Message API
 // =========================
 export const sendMessage = (data) => {
-  return API.post("/message", data);
+  return API.post("/messages", data);
 };
 
 // =========================

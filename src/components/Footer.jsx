@@ -170,112 +170,100 @@ export default function Footer() {
               </form>
 
               {/* POPUP MODAL */}
-          {showPopup && (
-  <AnimatePresence>
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm z-50"
-      onClick={() => setShowPopup(false)}
-    >
-      <motion.div
-        initial={{ scale: 0.8, opacity: 0, y: 20 }}
-        animate={{ scale: 1, opacity: 1, y: 0 }}
-        exit={{ scale: 0.8, opacity: 0, y: 20 }}
-        transition={{ 
-          type: "spring", 
-          damping: 25, 
-          stiffness: 300,
-          duration: 0.3
-        }}
-        className="relative bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-2xl w-[400px] max-w-[90%] overflow-hidden"
-        onClick={(e) => e.stopPropagation()}
-      >
-        {/* Animated border gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 opacity-20 rounded-2xl" />
-        
-        {/* Success icon with animation */}
-        <div className="relative pt-8 pb-4">
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.1, type: "spring", stiffness: 200 }}
-            className="w-16 h-16 mx-auto bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center shadow-lg"
-          >
-            <motion.svg
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="w-8 h-8 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <motion.path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={3}
-                d="M5 13l4 4L19 7"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-              />
-            </motion.svg>
-          </motion.div>
-        </div>
+              {showPopup && (
+                <AnimatePresence>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm z-50"
+                    onClick={() => setShowPopup(false)}
+                  >
+                    <motion.div
+                      initial={{ scale: 0.8, opacity: 0, y: 20 }}
+                      animate={{ scale: 1, opacity: 1, y: 0 }}
+                      exit={{ scale: 0.8, opacity: 0, y: 20 }}
+                      transition={{
+                        type: "spring",
+                        damping: 25,
+                        stiffness: 300,
+                        duration: 0.3
+                      }}
+                      className="relative bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-2xl w-[400px] max-w-[90%] overflow-hidden"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      {/* Animated border gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 opacity-20 rounded-2xl" />
 
-        {/* Content */}
-        <div className="text-center px-8 pb-8">
-          <motion.h2
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15 }}
-            className="text-2xl font-bold mb-3 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent"
-          >
-            Success!
-          </motion.h2>
-          
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.25 }}
-            className="text-gray-600 mb-6"
-          >
-            You've successfully subscribed to our newsletter!
-          </motion.p>
+                      {/* Success icon with animation */}
+                      <div className="relative pt-8 pb-4">
+                        <motion.div
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          transition={{ delay: 0.1, type: "spring", stiffness: 200 }}
+                          className="w-16 h-16 mx-auto bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center shadow-lg"
+                        >
+                          <motion.svg
+                            initial={{ pathLength: 0 }}
+                            animate={{ pathLength: 1 }}
+                            transition={{ delay: 0.2, duration: 0.5 }}
+                            className="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <motion.path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={3}
+                              d="M5 13l4 4L19 7"
+                              initial={{ pathLength: 0 }}
+                              animate={{ pathLength: 1 }}
+                              transition={{ delay: 0.2, duration: 0.5 }}
+                            />
+                          </motion.svg>
+                        </motion.div>
+                      </div>
 
-          <motion.button
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35 }}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            onClick={() => setShowPopup(false)}
-            className="w-full px-6 py-3 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-200"
-          >
-            Got it, thanks!
-          </motion.button>
-        </div>
+                      {/* Content */}
+                      <div className="text-center px-8 pb-8">
+                        <motion.h2
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.15 }}
+                          className="text-2xl font-bold mb-3 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent"
+                        >
+                          Success!
+                        </motion.h2>
 
-        {/* Close button (X) */}
-        <motion.button
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          onClick={() => setShowPopup(false)}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
-          whileHover={{ rotate: 90 }}
-          transition={{ duration: 0.2 }}
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </motion.button>
-      </motion.div>
-    </motion.div>
-  </AnimatePresence>
-)}
+                        <motion.p
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ delay: 0.25 }}
+                          className="text-gray-600 mb-6"
+                        >
+                          You've successfully subscribed to our newsletter!
+                        </motion.p>
+                      </div>
+
+                      {/* Close button (X) */}
+                      <motion.button
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.3 }}
+                        onClick={() => setShowPopup(false)}
+                        className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+                        whileHover={{ rotate: 90 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </motion.button>
+                    </motion.div>
+                  </motion.div>
+                </AnimatePresence>
+              )}
             </>
           </div>
         </div>

@@ -1,10 +1,11 @@
 "use client";
-
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { sendMessage } from "../api/api";
 import {
   FiGithub,
+  FiCheck,
   FiLinkedin,
   FiTwitter,
   FiMail,
@@ -94,13 +95,11 @@ const FormInput = ({
           value={value}
           onChange={onChange}
           placeholder={placeholder}
-          className={`w-full px-4 py-3 rounded-xl border transition-all duration-300 bg-white focus:outline-none focus:ring-2 ${
-            Icon ? "pl-11" : ""
-          } ${
-            error
+          className={`w-full px-4 py-3 rounded-xl border transition-all duration-300 bg-white focus:outline-none focus:ring-2 ${Icon ? "pl-11" : ""
+            } ${error
               ? "border-red-400 focus:border-red-500 focus:ring-red-200"
               : "border-primary/20 focus:border-primary focus:ring-primary/20"
-          }`}
+            }`}
         />
       </div>
       {error && (
@@ -145,13 +144,11 @@ const FormTextarea = ({
           onChange={onChange}
           placeholder={placeholder}
           rows={rows}
-          className={`w-full px-4 py-3 rounded-xl border transition-all duration-300 bg-white focus:outline-none focus:ring-2 ${
-            Icon ? "pl-11" : ""
-          } ${
-            error
+          className={`w-full px-4 py-3 rounded-xl border transition-all duration-300 bg-white focus:outline-none focus:ring-2 ${Icon ? "pl-11" : ""
+            } ${error
               ? "border-red-400 focus:border-red-500 focus:ring-red-200"
               : "border-primary/20 focus:border-primary focus:ring-primary/20"
-          }`}
+            }`}
         />
       </div>
       {error && (
@@ -251,6 +248,7 @@ export default function Contact() {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', null
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
   // Form state
   const [formData, setFormData] = useState({
@@ -307,26 +305,32 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!validateForm()) {
-      return;
-    }
-
-    setIsSubmitting(true);
-    setSubmitStatus(null);
-
-    // Simulate API call (replace with actual API endpoint)
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      setIsSubmitting(true);
 
-      // Success
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      const response = await sendMessage(formData);
 
-      // Reset success message after 5 seconds
-      setTimeout(() => setSubmitStatus(null), 5000);
+      console.log("Message sent successfully:", response.data);
+
+      // Reset form after success
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+
+      // Show success popup
+      setShowSuccessPopup(true);
+
+      // Auto close after 3 seconds
+      setTimeout(() => {
+        setShowSuccessPopup(false);
+      }, 3000);
+
     } catch (error) {
-      setSubmitStatus("error");
-      setTimeout(() => setSubmitStatus(null), 5000);
+      console.error("Error sending message:", error);
+      alert(error?.response?.data?.message || "Failed to send message. Try again!");
     } finally {
       setIsSubmitting(false);
     }
@@ -648,9 +652,8 @@ export default function Contact() {
                   disabled={isSubmitting}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className={`w-full mt-4 px-6 py-3 bg-primary text-white rounded-xl font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 flex items-center justify-center gap-2 ${
-                    isSubmitting ? "opacity-70 cursor-not-allowed" : ""
-                  }`}
+                  className={`w-full mt-4 px-6 py-3 bg-primary text-white rounded-xl font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 flex items-center justify-center gap-2 ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""
+                    }`}
                 >
                   {isSubmitting ? (
                     <>
@@ -665,6 +668,23 @@ export default function Contact() {
                   )}
                 </motion.button>
               </form>
+
+              {/* Success Popup */}
+              <AnimatePresence>
+                {showSuccessPopup && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -50 }}
+                    className="fixed top-5 right-5 z-50"
+                  >
+                    <div className="bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg flex items-center gap-3">
+                      <FiCheck className="w-5 h-5" />
+                      <span>Message sent successfully!</span>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               {/* Alternative Contact */}
               <div className="mt-6 pt-6 border-t border-gray-100 text-center">
