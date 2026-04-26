@@ -31,7 +31,7 @@ import {
 import { FaPaintBrush, FaPenNib } from "react-icons/fa";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef } from "react";
-import pic from "../assets/pic.png"
+import pic from "../assets/pic.jpeg"
 
 export default function Home() {
   const skills = [
@@ -445,50 +445,207 @@ export default function Home() {
             </div>
 
             {/* Right Column - Picture */}
-            <motion.div
-              className="flex justify-center items-center"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <div className="relative">
-                {/* Decorative circle behind image */}
-                <motion.div
-                  className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-2xl"
-                  animate={{
-                    scale: [1, 1.1, 1],
-                    rotate: [0, 360]
-                  }}
-                  transition={{
-                    duration: 20,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                />
+          <motion.div
+  className="flex justify-center items-center"
+  initial={{ opacity: 0, x: 50 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8, delay: 0.4 }}
+>
+  <div className="relative">
+    {/* Pulsing background rings */}
+    <motion.div
+      className="absolute -inset-8 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full blur-3xl"
+      animate={{
+        scale: [1, 1.2, 1],
+        opacity: [0.3, 0.6, 0.3],
+      }}
+      transition={{
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+    />
 
-                {/* Image container */}
-                <div className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[450px] lg:h-[450px] rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
-                  <img
-                    src={pic}
-                    alt="Frontend Developer"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+    {/* Rotating gradient ring */}
+    <motion.div
+      className="absolute -inset-6 rounded-full"
+      style={{
+        background: "conic-gradient(from 0deg, var(--primary), var(--secondary), var(--primary))",
+      }}
+      animate={{ rotate: 360 }}
+      transition={{
+        duration: 8,
+        repeat: Infinity,
+        ease: "linear",
+      }}
+    >
+      <div className="absolute inset-[3px] rounded-full bg-background" />
+    </motion.div>
 
-                {/* Decorative dots */}
-                <motion.div
-                  className="absolute -top-8 -right-8 w-20 h-20"
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                >
-                  <div className="grid grid-cols-3 gap-1">
-                    {[...Array(9)].map((_, i) => (
-                      <div key={i} className="w-2 h-2 bg-primary/40 rounded-full" />
-                    ))}
-                  </div>
-                </motion.div>
-              </div>
-            </motion.div>
+    {/* Decorative circle behind image */}
+    <motion.div
+      className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-2xl"
+      animate={{
+        scale: [1, 1.1, 1],
+        rotate: [0, 360],
+      }}
+      transition={{
+        duration: 20,
+        repeat: Infinity,
+        ease: "linear",
+      }}
+    />
+
+    {/* Orbiting particles */}
+    {[...Array(6)].map((_, i) => (
+      <motion.div
+        key={i}
+        className="absolute w-3 h-3 rounded-full bg-primary"
+        style={{
+          left: "50%",
+          top: "50%",
+          transformOrigin: "center",
+        }}
+        animate={{
+          rotate: [0, 360],
+          x: [0, 200, 0],
+          y: [0, 0, 0],
+          scale: [1, 1.5, 1],
+          opacity: [0.5, 1, 0.5],
+        }}
+        transition={{
+          duration: 4,
+          delay: i * 0.5,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      />
+    ))}
+
+    {/* Image container with floating animation */}
+    <motion.div
+      className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[450px] lg:h-[450px] rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl"
+      animate={{
+        y: [0, -10, 0],
+      }}
+      transition={{
+        duration: 3,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+    >
+      <img
+        src={pic}
+        alt="Frontend Developer"
+        className="w-full h-full object-cover"
+      />
+
+      {/* Overlay gradient on hover */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent"
+        initial={{ opacity: 0 }}
+        whileHover={{ opacity: 1 }}
+        transition={{ duration: 0.3 }}
+      />
+    </motion.div>
+
+    {/* Decorative dots with bounce animation */}
+    <motion.div
+      className="absolute -top-8 -right-8 w-20 h-20"
+      animate={{ rotate: 360 }}
+      transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+    >
+      <div className="grid grid-cols-3 gap-1">
+        {[...Array(9)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="w-2 h-2 bg-primary/40 rounded-full"
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.4, 1, 0.4],
+            }}
+            transition={{
+              duration: 2,
+              delay: i * 0.1,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
+      </div>
+    </motion.div>
+
+    {/* Animated skill badges */}
+    <motion.div
+      className="absolute -bottom-4 -left-4 bg-primary/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-white shadow-lg"
+      animate={{
+        scale: [1, 1.1, 1],
+        rotate: [-5, 5, -5],
+      }}
+      transition={{
+        duration: 2,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+      whileHover={{ scale: 1.2 }}
+    >
+      🚀 React
+    </motion.div>
+
+    <motion.div
+      className="absolute top-10 -right-6 bg-secondary/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-white shadow-lg"
+      animate={{
+        scale: [1, 1.1, 1],
+        rotate: [5, -5, 5],
+      }}
+      transition={{
+        duration: 2.5,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: 0.5,
+      }}
+      whileHover={{ scale: 1.2 }}
+    >
+      💻 Tailwind
+    </motion.div>
+
+    {/* Sparkle effects */}
+    {[...Array(12)].map((_, i) => (
+      <motion.div
+        key={`sparkle-${i}`}
+        className="absolute w-1 h-1 bg-primary rounded-full"
+        style={{
+          top: `${Math.random() * 100}%`,
+          left: `${Math.random() * 100}%`,
+        }}
+        animate={{
+          opacity: [0, 1, 0],
+          scale: [0, 1.5, 0],
+        }}
+        transition={{
+          duration: 2,
+          delay: i * 0.3,
+          repeat: Infinity,
+          repeatDelay: Math.random() * 2,
+        }}
+      />
+    ))}
+
+    {/* Glowing shadow effect */}
+    <motion.div
+      className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-48 h-12 bg-primary/20 rounded-full blur-xl"
+      animate={{
+        scale: [1, 1.2, 1],
+        opacity: [0.3, 0.6, 0.3],
+      }}
+      transition={{
+        duration: 2,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+    />
+  </div>
+</motion.div>
 
           </div>
         </div>
