@@ -61,8 +61,8 @@ export default function Home() {
       featured: true,
       year: "2024",
       likes: 128,
-      liveLink: "https://e-commerce-store-iota-ten.vercel.app/",
-      githubLink: "https://github.com/zainsultani333-glitch/E-Commerce-Store",
+      liveLink: "https://e-commerce-frontend-kappa-beryl.vercel.app/",
+      githubLink: "https://github.com/zainsultani333-glitch/E-Commerce-Frontend",
       features: [
         "User authentication & authorization",
         "Product search & filtering",
